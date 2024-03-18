@@ -1,9 +1,25 @@
 package com.qa.demo.entities;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class Person {
+
+    @Id
+    @GeneratedValue
+    private Integer id;
+
+    @Column(name = "full_name", nullable = false, unique = true)
     private String name;
     private int age;
     private String job;
+
+    public Integer getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -15,6 +31,10 @@ public class Person {
 
     public String getJob() {
         return job;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public void setName(String name) {

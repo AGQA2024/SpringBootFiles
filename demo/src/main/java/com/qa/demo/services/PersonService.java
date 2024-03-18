@@ -1,6 +1,7 @@
 package com.qa.demo.services;
 
 import com.qa.demo.entities.Person;
+import com.qa.demo.repos.PersonRepo;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,10 +11,19 @@ import java.util.List;
 @Service
 public class PersonService {
 
-    private final List<Person> people = new ArrayList<>();
+    private PersonRepo repo;
 
+    public PersonService(PersonRepo repo){
+        this.repo = repo;
+    }
+
+//    private final List<Person> people = new ArrayList<>();
+
+//    public List<Person> getAll() {
+//        return this.people;
+//    }
     public List<Person> getAll() {
-        return this.people;
+        return null;
     }
 
 
