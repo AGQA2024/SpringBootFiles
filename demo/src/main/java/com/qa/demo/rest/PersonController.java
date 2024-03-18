@@ -31,4 +31,8 @@ public class PersonController {
         //id acts as the list index
         return this.people.remove(id);
     }
+
+    public Person updatePerson(int id, String name, Integer age, String job){
+        return null;
+    }
 }
