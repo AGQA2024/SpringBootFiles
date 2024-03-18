@@ -46,4 +46,9 @@ public class PersonController {
 
         return toUpdate;
     }
+
+    @GetMapping("/{id}")
+    public Person getById(@PathVariable int id){
+        return this.people.get(id);
+    }
 }
