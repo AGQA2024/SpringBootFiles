@@ -32,7 +32,18 @@ public class PersonController {
         return this.people.remove(id);
     }
 
-    public Person updatePerson(int id, String name, Integer age, String job){
-        return null;
+    @PatchMapping("/update/{id}")
+    public Person updatePerson(@PathVariable int id,
+                               @RequestParam(required = false) String name,
+                               @RequestParam(required = false) Integer age,
+                               @RequestParam(required = false) String job){
+
+        Person toUpdate = this.people.get(id);
+
+        if (name != null) toUpdate.setName(name);
+        if (age != null) toUpdate.setAge(age);
+        if (job != null) toUpdate.setJob(job);
+
+        return toUpdate;
     }
 }
