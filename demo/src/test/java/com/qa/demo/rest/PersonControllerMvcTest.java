@@ -21,7 +21,8 @@ public class PersonControllerMvcTest {
     @Autowired
     private MockMvc mvc;
 
-    private ObjectMapper mapper;
+    @Autowired
+    private ObjectMapper mapper; // = new ObjectMapper();
 
     @Test
     void testCreate() throws Exception {

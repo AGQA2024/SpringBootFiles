@@ -18,18 +18,20 @@ public class Person {
     private String job;
 
     public Person(String name, int age, String job){
-        setName(name);
-        setAge(age);
-        setJob(job);
+        this.name =name;
+        this.age = age;
+        this.job = job;
     }
 
     public Person(int id, String name, int age, String job){
-        setId(id);
-        setName(name);
-        setAge(age);
-        setJob(job);
+        this.id = id;
+        this.name =name;
+        this.age = age;
+        this.job = job;
     }
 
+    public Person(){
+    }
 
     public Integer getId() {
         return id;
