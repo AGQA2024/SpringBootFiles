@@ -23,34 +23,58 @@ public class PersonService {
 //        return this.people;
 //    }
     public List<Person> getAll() {
-        return null;
+        return this.repo.findAll();
     }
 
+
+//    public Person createPerson(Person person){
+//        this.people.add(person);
+//        return this.people.get(this.people.size()-1);
+//    }
 
     public Person createPerson(Person person){
-        this.people.add(person);
-        return this.people.get(this.people.size()-1);
+        return this.repo.save(person);
     }
 
+
+//    public Person removePerson(int id){
+//        return this.people.remove(id);
+//    }
 
     public Person removePerson(int id){
-        return this.people.remove(id);
+        Person removed = this.getById(id);
+        this.repo.deleteById(id);
+        return removed;
     }
 
+//    public Person updatePerson(int id, String name, Integer age, String job){
+//
+//        Person toUpdate = this.people.get(id);
+//
+//        if (name != null) toUpdate.setName(name);
+//        if (age != null) toUpdate.setAge(age);
+//        if (job != null) toUpdate.setJob(job);
+//
+//        return toUpdate;
+//    }
 
     public Person updatePerson(int id, String name, Integer age, String job){
-
-        Person toUpdate = this.people.get(id);
+        Person toUpdate = this.getById(id);
 
         if (name != null) toUpdate.setName(name);
         if (age != null) toUpdate.setAge(age);
         if (job != null) toUpdate.setJob(job);
 
-        return toUpdate;
+        return this.repo.save(toUpdate);
     }
 
+//    public Person getById(int id){
+//        return this.people.get(id);
+//    }
 
     public Person getById(int id){
-        return this.people.get(id);
+
+        return this.repo.findById(id).get();
+        //Could have an orElse orElseThrow to handle exceptions
     }
 }
