@@ -17,6 +17,20 @@ public class Person {
     private int age;
     private String job;
 
+    public Person(String name, int age, String job){
+        setName(name);
+        setAge(age);
+        setJob(job);
+    }
+
+    public Person(int id, String name, int age, String job){
+        setId(id);
+        setName(name);
+        setAge(age);
+        setJob(job);
+    }
+
+
     public Integer getId() {
         return id;
     }
@@ -49,3 +63,4 @@ public class Person {
         this.job = job;
     }
 }
+
