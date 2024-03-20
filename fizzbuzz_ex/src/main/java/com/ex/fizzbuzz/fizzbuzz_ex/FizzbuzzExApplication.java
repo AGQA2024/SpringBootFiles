@@ -2,12 +2,20 @@ package com.ex.fizzbuzz.fizzbuzz_ex;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 @SpringBootApplication
 public class FizzbuzzExApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FizzbuzzExApplication.class, args);
+	}
+
+	@GetMapping("/test")
+	public String welcome(){
+		return "<h1>Welcome to the Test Page</h1>";
 	}
 
 }
